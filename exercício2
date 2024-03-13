@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int A, B, C, D, E;
+    float areaTriangulo, perimetroRetangulo, areaCirculo;
+
+    // Pedir os 5 números inteiros
+    printf("Digite o valor de A (inteiro): ");
+    scanf("%d", &A);
+    printf("Digite o valor de B (base do triângulo): ");
+    scanf("%d", &B);
+    printf("Digite o valor de C (altura do triângulo): ");
+    scanf("%d", &C);
+    printf("Digite o valor de D (lado do retângulo): ");
+    scanf("%d", &D);
+    printf("Digite o valor de E (raio do círculo): ");
+    scanf("%d", &E);
+
+    
+    areaTriangulo = (B * C) / 2.0;
+    printf("Área do triângulo: %.2f\n", areaTriangulo);
+
+  
+    perimetroRetangulo = 2 * (A + B + C + D);
+    printf("Perímetro do retângulo: %.2f\n", perimetroRetangulo);
+
+   
+    areaCirculo = M_PI * pow(E, 2);
+    printf("Área do círculo: %.2f\n", areaCirculo);
+
+    return 0;
+}
