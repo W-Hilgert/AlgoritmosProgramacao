@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    float trabalho, prova, teste, notaFinal;
+
+    printf("Digite a nota do trabalho: ");
+    scanf("%f", &trabalho);
+
+    printf("Digite a nota da prova: ");
+    scanf("%f", &prova);
+
+    printf("Digite a nota do teste: ");
+    scanf("%f", &teste);
+
+  
+    notaFinal = trabalho * 0.1 + prova * 0.6 + teste * 0.3;
+
+  
+    printf("A nota final do aluno é: %.2f\n", notaFinal);
+
+    return 0;
+}
