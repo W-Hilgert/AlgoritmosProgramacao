@@ -1,0 +1,246 @@
+//1. Crie um programa que recebe um inteiro pelo teclado e imprime se ele é par ou ímpar. 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num;
+    
+    printf("digite um numero inteiro: ");
+    scanf("%i", &num);
+    
+    if (num % 2 == 0){
+        printf("\n o numero %i é par", num);
+    }
+    else {
+        printf("o numero %i é impar", num);
+    }
+    return 0; 
+}
+
+//2. Crie um programa que recebe dois valores inteiros pelo teclado e imprime qual dos dois é maior.
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num1;
+    int num2;
+    
+    printf("digite um numero inteiro: ");
+    scanf("%d", &num1);
+    printf("digite outro numero inteiro: ");
+    scanf("%d", &num2);
+    
+    if ( num1 > num2){
+        printf("\n o numero %d é maior que o %d.", num1, num2);
+    } else {
+        printf("\n o numero %d é maior que o %d.", num2, num1);
+    }
+    return 0;
+}
+
+//3. Crie um programa que recebe dois valores inteiros A e B pelo teclado e imprime o valor de A dividido por B.
+//Entretanto, se o valor de B for 0, imprima uma mensagem de erro e não faça a divisão.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int A;
+    int B;
+    
+    
+    printf("digite o valor de A:");
+    scanf("%d", &A);
+    printf("digite o valor de B:");
+    scanf("%d", &B);
+    
+    int divisao = A / B;
+    if ( B != 0) {
+        printf("\n o resultado é %d . ", divisao);
+    } else {
+        printf("\n ERRO!");
+    }
+    return 0;
+}
+
+//4. Crie um programa que recebe três valores inteiros pelo teclado e imprime qual dos três é menor.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num1;
+    int num2;
+    int num3;
+    
+    printf("digite um valor: ");
+    scanf("%d", &num1);
+    printf("digite o segundo valor: ");
+    scanf("%d", &num2);
+    printf("digite o terceiro valor: ");
+    scanf("%d", &num3);
+    
+    if ( num1 > num2 && num1 > num3){
+        printf("\n o numero %d é maior que o %d e o %d .", num1, num2, num3);
+    } else if ( num2 > num1 && num2 > num3){
+        printf("\n o numero %d é maior que o %d e o %d .", num2, num1, num3);
+    } else {
+        printf("\n o numero %d é maior que o %d e o %d .", num3, num1, num2);
+    }
+    return 0; 
+}
+
+//5 . Crie um programa que recebe o preço de um produto pelo teclado e imprime na tela a mensagem adequada, de acordo com o preço: 
+//“Preço inválido”, se o preço for negativo ou zero
+//“Preço baixo”, se o preço for entre 0 e 30 (inclusive) 
+//“Preço médio”, se o preço for entre 30 e 50 (inclusive)
+//“Preço alto”, se o preço for maior do que 50
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+   int produto;
+   
+   printf("digite o valor do produto: ");
+   scanf("%d", &produto);
+   
+   if (produto > 50 ){
+       printf("\n o produto tem preço alto!");
+   } else if (produto < 50 && produto > 30 ){
+       printf("\n o produto tem preço medio!");
+   } else if (produto < 30 && produto > 0){
+       printf("\n o pruduto tem o preço baixo!");
+   } else {
+       printf("\n preço invalido!");
+   }
+   return 0; 
+}
+
+ //6. Crie um programa que aplica uma taxa de juros em um determinado preço digitado pelo teclado.
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    float preco, novoPreco;
+    
+    printf("Digite o preco: ");
+    scanf("%f", &preco);
+    
+    if (preco < 0) {
+        printf("Erro: o preco nao pode ser negativo.\n");
+    } else if (preco < 100) {
+        novoPreco = preco * 1.1; // Aumento de 10%
+    } else if (preco >= 100 && preco <= 300) {
+        novoPreco = preco * 1.2; // Aumento de 20%
+    } else if (preco > 300 && preco <= 1000) {
+        novoPreco = preco * 1.5; // Aumento de 50%
+    } else {
+        printf("Erro: o preco deve estar entre 0 e 1000.\n");
+        return 1;
+    }
+    
+    printf("O novo preco com a taxa aplicada e: %.2f\n", novoPreco);
+    
+    return 0;
+}
+
+//7. Crie um programa que recebe um valor inteiro referente a um determinado ano.
+//Imprima na tela se o ano informado é bissexto ou não.
+
+#include <stdio.h>
+#include <math.h>
+
+
+int main() {
+    int ano;
+
+    printf("Digite um ano: ");
+    scanf("%d", &ano);
+
+    
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        printf("%d é um ano bissexto.\n", ano);
+    } else {
+        printf("%d não é um ano bissexto.\n", ano);
+    }
+
+    return 0;
+}
+
+
+//8. Crie um programa que exibe um menu de calculadora na tela.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int opcao;
+    double num1, num2, resultado;
+
+    do {
+        printf("Digite 1 para somar dois valores\n");
+        printf("Digite 2 para subtrair dois valores\n");
+        printf("Digite 3 para multiplicar dois valores\n");
+        printf("Digite 4 para dividir dois valores\n");
+        printf("Digite 5 para realizar uma potência entre dois valores\n");
+        printf("Digite 6 para realizar uma radiciação entre dois valores\n");
+        printf("Digite qualquer outro número para sair\n");
+        printf("Opção: ");
+        scanf("%d", &opcao);
+
+        switch(opcao) {
+            case 1:
+                printf("Digite os dois valores a serem somados: ");
+                scanf("%lf %lf", &num1, &num2);
+                resultado = num1 + num2;
+                printf("Resultado: %.2lf\n", resultado);
+                break;
+            case 2:
+                printf("Digite os dois valores a serem subtraídos: ");
+                scanf("%lf %lf", &num1, &num2);
+                resultado = num1 - num2;
+                printf("Resultado: %.2lf\n", resultado);
+                break;
+            case 3:
+                printf("Digite os dois valores a serem multiplicados: ");
+                scanf("%lf %lf", &num1, &num2);
+                resultado = num1 * num2;
+                printf("Resultado: %.2lf\n", resultado);
+                break;
+            case 4:
+                printf("Digite os dois valores a serem divididos: ");
+                scanf("%lf %lf", &num1, &num2);
+                if (num2 != 0) {
+                    resultado = num1 / num2;
+                    printf("Resultado: %.2lf\n", resultado);
+                } else {
+                    printf("Não é possível dividir por zero.\n");
+                }
+                break;
+            case 5:
+                printf("Digite a base e o expoente: ");
+                scanf("%lf %lf", &num1, &num2);
+                resultado = pow(num1, num2);
+                printf("Resultado: %.2lf\n", resultado);
+                break;
+            case 6:
+                printf("Digite o número e o índice da radiciação: ");
+                scanf("%lf %lf", &num1, &num2);
+                if (num1 >= 0) {
+                    resultado = pow(num1, 1.0 / num2);
+                    printf("Resultado: %.2lf\n", resultado);
+                } else {
+                    printf("Não é possível calcular a raiz de um número negativo.\n");
+                }
+                break;
+            default:
+                printf("Saindo do programa.\n");
+                break;
+        }
+    } while (opcao >= 1 && opcao <= 6);
+
+    return 0;
+}
