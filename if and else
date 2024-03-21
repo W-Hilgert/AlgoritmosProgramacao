@@ -244,3 +244,105 @@ int main() {
 
     return 0;
 }
+
+//9. Crie um programa que recebe a nota do Grau A e a nota do Grau B pelo teclado 
+//e imprime na tela se será necessário ou não realizar o Grau C (considere o sistema de avaliação da Unisinos,
+//no qual o GA vale 33% e o GB vale 67%). Caso algum valor informado seja negativo, informe uma mensagem de erro 
+//e não realize o cálculo.
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+  float GA, GB;
+  
+  printf("Digite a nota do grau A: ");
+  scanf("%f", &GA);
+  
+  printf("Digite a nota do grau B: ");
+  scanf("%f", &GB);
+  
+  float resultado = ((GA * 0.33) + (GB * 0.67));
+  
+  if (resultado >= 6) { 
+      printf("Não é necessario realizar o grau C!");
+  } else {
+      printf("Sera necessario realizar o grau C!");
+  }
+  return 0;
+}
+
+//10. Crie um programa que solicita que o usuário digite uma letra
+//e imprime na tela se a letra é ou não é uma vogal.
+
+#include <stdio.h>
+
+
+int main() {
+   char letra;
+   
+   printf("Digite uma letra: ");
+   scanf("%c", &letra); 
+   
+   if (letra == 'a' ||letra == 'A' ||letra == 'e' ||letra == 'E' ||letra == 'i' ||
+   letra == 'I' ||letra == 'o' ||letra == 'O' ||letra == 'u' ||letra == 'U') {
+       printf("%c é uma vogal", letra);
+   }else {
+       printf("%c é uma letra", letra);
+   }
+   return 0;
+}
+
+//11. Crie um programa que lê o preço de um determinado produto. 
+//Em seguida, simule a compra de X produtos (onde X deve ser solicitado para o usuário pelo teclado),
+//imprimindo o valor total da compra com 2 casas decimais e com o símbolo de reais na frente do valor ("R$").
+//Caso a quantidade de produtos indicada seja negativa, não realize a conta e imprima uma mensagem de erro.
+   
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    float preco;
+    int quantX; 
+    
+    printf("digite o preco do produto: ");
+    scanf("%f", &preco);
+    printf("digite a quantidade: ");
+    scanf("%d", &quantX);
+    
+    float valor = (preco) * (quantX);
+    if (preco >= 0 || quantX >= 0) {
+        printf("o valor da compra é de R$:%.2f", valor);
+    } else {
+        printf("ERRO!");
+    }
+    return 0; 
+}
+
+//12. Altere o programa desenvolvido no exercício 11, considerando agora que os produtos possuem desconto de acordo com a quantidade que forem comprados.
+//Os descontos são os seguintes:
+//comprando 3 ou 4 produtos, o desconto é de 10%
+//comprando entre 5 (inclusive) e 10 (inclusive) produtos, o desconto é de 15%
+//comprando mais do que 10 produtos, o desconto é de 20%
+//comprando menos do que 3 produtos, não há desconto
+
+int main() {
+    float preco;
+    int quantX; 
+    
+    printf("digite o preco do produto: ");
+    scanf("%f", &preco);
+    printf("digite a quantidade: ");
+    scanf("%d", &quantX);
+    
+    float valor = preco * quantX; 
+    float total;
+   if (valor = 3 || valor = 4) {
+       total1 = valor * 0.1;
+       printf("o valor da compra é de R$:%f", total1);
+   } else if (valor )
+       
+   }
+   
+    return 0; 
+}
