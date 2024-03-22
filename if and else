@@ -326,6 +326,9 @@ int main() {
 //comprando mais do que 10 produtos, o desconto é de 20%
 //comprando menos do que 3 produtos, não há desconto
 
+#include <stdio.h>
+#include <math.h>
+
 int main() {
     float preco;
     int quantX; 
@@ -336,13 +339,20 @@ int main() {
     scanf("%d", &quantX);
     
     float valor = preco * quantX; 
-    float total;
-   if (valor = 3 || valor = 4) {
+    float total1, total2, total3;
+   if (valor == 3 || valor == 4) {
        total1 = valor * 0.1;
-       printf("o valor da compra é de R$:%f", total1);
-   } else if (valor )
+       printf("o valor da compra é de R$:%.2f", total1);
+   } else if (valor == 5 || valor == 6 || valor == 7 || valor == 8 || valor == 9 || valor == 10 ){
+       total2 = valor * 0.15;
+       printf("o valor da compra é de R$:%.2f", total2);
+   } else if (valor >= 10){
+       total3 = valor * 0.2;
+       printf("o valor da compra é de R$:%.2f", total3);
+   }else {
+       printf("não ha desconto!"); 
        
    }
    
-    return 0; 
+   return 0; 
 }
