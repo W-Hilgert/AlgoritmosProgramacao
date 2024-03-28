@@ -1,0 +1,107 @@
+//while
+#include <stdio.h>
+
+int main() {
+    int i = 0, op; 
+    
+    while(i < 7) {
+        printf("valor de i é menor que7\n");
+        i++;
+    }
+    
+    printf("digite um valor inteiro MAIOR QUE ZERO: ");
+    scanf("%d", &op); 
+    while(op <= 0) {
+        printf("[ERRO] valor digitado invalido! \n"); 
+        
+    }
+    return 0;
+}
+
+//cont
+//2. Crie um programa que imprime os números de 0 a 1000. 
+#include <stdio.h>
+
+int main() {
+    int cont = 0;
+    while(cont <= 1000){
+        printf("%d\n", cont++);
+    }
+    return 0;
+}
+
+4. Crie um programa que imprime os números de 0 a 1000 em ordem decrescente (ou seja, de 1000 a 0).
+#include <stdio.h>
+
+int main() {
+    int cont = 1000;
+    while(cont >= 0){
+        printf("%d\n", cont--);
+    }
+    return 0;
+}
+
+//5. Crie um programa que solicita 10 caracteres pelo teclado. Ao final, imprima quantas letras A foram digitadas.
+#include <stdio.h>
+
+int main() {
+    char c;
+    int cont = 0, quantA = 0;
+    
+    while(cont < 10){
+        printf("digite um caractere:");
+        scanf(" %c", &c);
+        cont++;
+        if(c == 'A'){
+            quantA++;
+        cont++;
+        }
+    }
+    
+    printf("%d 'A' foram digitados.", quantA);
+    
+    return 0;
+}
+
+7. Crie um programa que solicita para o usuário que ele digite 10 valores inteiros. 
+//Ao final, imprima a soma de todos os valores digitados. 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num;
+    int cont = 0, final;
+    
+    while(cont < 10){
+        printf("digite um valor inteiro:");
+        scanf(" %d", &num);
+        final = num + final;
+        cont++;
+    }
+    
+    printf("%d 'A' foram digitados.", final);
+    
+    return 0;
+}
+
+//12. Crie um programa que pede para o usuário digitar números positivos via teclado. 
+//Quando o usuário digitar um número negativo, informe a média de todos os números que ele informou. 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+   int num; 
+   int cont = 0, database, final;
+   
+   while(cont >= 0){
+       printf("digite um numero positivo:");
+       scanf("%d", &num);
+       database = num + database;
+       cont++;
+       if(num < 0){
+           final = database * 0.6;
+           printf("sua nota é %d", final);
+       }
+   }
+    return 0;
+}
