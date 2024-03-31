@@ -91,17 +91,29 @@ int main() {
 
 int main() {
    int num; 
-   int cont = 0, database, final;
+   int soma = 0;
+   int contador = 0;
    
-   while(cont >= 0){
+   printf("Digite números positivos (digite um número negativo para parar):\n");
+   
+   while(1){
        printf("digite um numero positivo:");
        scanf("%d", &num);
-       database = num + database;
-       cont++;
+     
        if(num < 0){
-           final = database * 0.6;
-           printf("sua nota é %d", final);
+           if (contador == 0){
+               printf("nenhum numero positivo foi add.\n");
+               
+           }
+               else {
+                   float media = (float)soma / contador;
+                   printf("A média dos números positivos é: %.2f\n", media);
+               }
+               break;  
+           }
+           soma += num;
+           contador++;
        }
-   }
+
     return 0;
 }
