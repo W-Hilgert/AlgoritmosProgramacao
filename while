@@ -117,3 +117,36 @@ int main() {
 
     return 0;
 }
+
+//15. Crie um programa que imprime os números primos entre 0 e 200,
+//imprimindo ao final a soma destes números.
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+    int isPrime(int num) {
+        if (num <= 1) {
+            return 0; // Números menores ou iguais a 1 não são primos
+        }
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                return 0; // Se for divisível por qualquer número diferente de 1 e ele mesmo, não é primo
+            }
+        }
+        return 1; // Se passar pelos testes anteriores, é primo
+    }
+        int soma = 0;
+        printf("Números primos entre 0 e 200:\n");
+        for (int i = 0; i <= 200; i++) {
+            if (isPrime(i)) {
+                printf("%d ", i);
+                soma += i; // Adiciona o número primo atual à soma
+            }
+        }
+        printf("\nA soma dos números primos é: %d\n", soma);
+        return 0;
+    
+    
+
+    return 0;
+}
