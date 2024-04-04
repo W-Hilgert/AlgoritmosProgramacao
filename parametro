@@ -1,3 +1,28 @@
 parametro de entrada: 
 variavel vai vir pelo parametro de entrada. se não, não apresentara nada
 informo dentro dos parenteses "()".
+
+//3
+#include <stdio.h>
+
+
+void isPrime(int num) {
+        if (num <= 1) {
+            printf("%d não é primo!", num);
+            return 0; 
+        }
+        while (int i = 2; i <= num / 2 ) {
+            if (num % i == 0) {
+                printf("%d é primo!", num);
+                return 0; 
+            }
+        }
+    }
+int main(){
+    int num;
+    printf("digite um numero inteiro:");
+    scanf("%d", &num);
+    isPrime(num);
+    
+    return 0;
+}
