@@ -1,7 +1,43 @@
 parametro de entrada: 
 variavel vai vir pelo parametro de entrada. se não, não apresentara nada
 informo dentro dos parenteses "()".
+//2
+#include <stdio.h>
 
+
+float divisao(float x, float y, float z){
+    float soma = x + y + z;
+    return soma /3;
+}
+
+int main(){
+    float x, y, z;
+    printf("Digite o conceito A:");
+    scanf("%f", &x);
+    printf("Digite o conceito B:");
+    scanf("%f", &y);
+    printf("Digite o conceito C:");
+    scanf("%f", &z);
+     
+    float d = divisao (x, y, z);
+    
+    if (d <= 4.0){
+        printf("Conceito: D");
+    }
+    else if(4.1 && 7.0){
+        printf("Conceito: C");
+    }
+    else if (7.1 && 9.0){
+        printf("Conceito: B");
+    }
+    else if (9.1 && 10.0){
+        printf("Conceito: A");
+    }
+    else {
+        printf("ERRO!");
+    }
+    return 0;
+}
 //3
 #include <stdio.h>
 
