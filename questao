@@ -1,0 +1,32 @@
+//questao: solicite ao usuario para inserir um numero inteiro positivo, 
+//conte os numeros de bits e diga se a quantidade de bits é par ou ímpar. 
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int num, nBits = 0;
+
+    do {
+        printf("Digite um número inteiro positivo: ");
+        scanf("%d", &num);
+    } while (num < 0);
+
+    int temp = num;
+    do {
+        nBits += temp & 1; 
+        temp >>= 1; 
+    } while (temp != 0);
+
+    printf("O número %d tem %d bits definidos.\n", num, nBits);
+
+    switch (nBits % 2) {
+        case 0:
+            printf("O número %d tem uma quantidade par de bits definidos.\n", num);
+            break;
+        case 1:
+            printf("O número %d tem uma quantidade ímpar de bits definidos.\n", num);
+            break;
+    }
+
+    return 0;
+}
