@@ -1,0 +1,30 @@
+// Radio petronio
+#include <stdio.h>
+
+int main()
+{
+    char continua = 'S';
+    while(continua == 'S'){
+        int quant, ehCrescente = 1;
+        float audienciaAtual, soma = 0, audienciaAnterior = 0;
+        
+        printf("Informe a quantidade de índices de audiência serão digitados: ");
+        scanf("%d", &quant);
+        
+        for(int i=0; i<quant; i++){
+            scanf("%f", &audienciaAtual);
+            soma += audienciaAtual;
+            if(audienciaAtual <= audienciaAnterior)
+                ehCrescente = 0;
+            audienciaAnterior = audienciaAtual;
+        }
+        if(ehCrescente) printf("AUDIÊNCIA SEMPRE CRESCENTE. ");
+        else printf("AUDIÊNCIA NEM SEMPRE CRESCENTE. ");
+        printf("Média de audiência: %.1f\n\n", (soma/quant));
+        
+        printf("Deseja continuar? (S ou N) ");
+        scanf(" %c", &continua);
+    }
+    
+    return 0;
+}
