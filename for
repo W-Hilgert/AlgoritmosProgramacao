@@ -94,3 +94,23 @@ int main()
 
     return 0;
 }
+
+//conjuntos de numeros e somas.
+#include <stdio.h>
+
+int main(){
+    int conjunto, quant, valor, resultado, j;
+    
+    scanf("%d", &conjunto); 
+    for(int i; i<conjunto; i++){
+        scanf("%d", &quant);
+        for(;j<quant; j++){
+            scanf("%d", &valor);
+            resultado = resultado + valor;
+        }
+        printf("O resultado é: %d\n", resultado);
+        resultado = 0; 
+        j=0;
+    }
+    return 0;
+}
