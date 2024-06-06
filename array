@@ -1,0 +1,172 @@
+#include <stdio.h>
+
+int main(){
+    //10 9 8 7 6 5 4 3 2 1 0
+    
+    int array[10];
+    for (int i=9;i>=0; i--)
+        array[i]=10-i;
+
+    for (int i=0;i<10; i++)
+        printf("%d ", array[i]);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(){
+    //0 1 4 9 16 25 36 49 64  81 100
+    
+    int array[11];
+    for (int i=0;i<11; i++)
+        array[i]=i * i;
+
+    for (int i=0;i<11; i++)
+        printf("%d ", array[i]);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(){
+    //0 1 2 3 4 5 10 20 30  40 50
+    
+    int array[10];
+    for (int i=0;i<10; i++)
+        
+        if(i<5)
+        array[i] = i + 1;
+        else 
+        array[i] = (i - 4)* 10;
+
+    for (int i=0;i<10; i++)
+        printf("%d ", array[i]);
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(){
+   //1-2-3-4-5
+    
+    double array[5] = {1, 2, 3, 4, 5};
+    for (int i=0;i<5; i++)
+       if(i ==4)
+        printf("%f", array[i]);
+        else 
+        printf("%f - ", array[i]);
+
+    return 0;
+}
+
+#include <stdio.h>
+
+int main(){
+  //insira 10 valores
+    
+    double array[10];
+    
+    for (int i=0;i<10; i++){
+    printf("informe o valor da posição %d: ", i);
+    scanf("%lf", &array[i]);
+    }
+    
+    for (int i = 0; i<10; i++)
+        if(i == 9 )
+            printf("%f", array[i]);
+        else 
+            printf("%f- ", array[i]);
+    
+    return 0;
+}
+4. da lista
+#include <stdio.h>
+
+int contarNegativos(int arr[], int tamanho) {
+    int count = 0;
+    for (int i = 0; i < tamanho; i++) {
+        if (arr[i] < 0) {
+            count++;
+        }
+    }
+    return count;
+}
+
+int main() {
+    
+    int arr[] = {-1, 2, -3, 4, -5, 6};
+    int tamanho = sizeof(arr) / sizeof(arr[0]);
+
+    int negativos = contarNegativos(arr, tamanho);
+    printf("A quantidade de elementos negativos no array é: %d\n", negativos);
+
+    return 0;
+}
+
+//! junto com a string
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    char nome[20];
+    
+    printf("digite seu nome completo: ");
+    fgets(nome, 20, stdin);
+    
+    nome[strlen(nome)-1] = '\0';
+    printf("nome: %s! \n", nome);
+    
+    return 0;
+}
+
+//strings conectadas
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    
+    char texto1[20], texto2[20];
+    
+    printf("digite a primeira string: ");
+    fgets(texto1, 20, stdin);
+    
+    printf("digite a segunda string: ");
+    fgets(texto2, 20, stdin);
+    
+    if(strcmp(texto1, texto2)== 0)
+    printf("todos são iguais!");
+    else printf("são diferentes");
+    
+    texto1[strlen(texto1)-1]='\0';
+    texto2[strlen(texto2)-1]='\0';
+    
+    strcat(texto1, texto2);
+    
+    printf("strings conectadas: %s!\n", texto1);
+}
+
+//verificando senhas
+#include <stdio.h>
+#include <string.h>
+
+int main(){
+    
+    char textoUser[20];
+    char senha[20]= "senhaDificil789$";
+   
+    for (int i=0; i<3; i++){
+    printf("digite a senha: ");
+    fgets(textoUser, 20, stdin);
+    textoUser[strlen(textoUser)-1]= '\0';
+    
+    if(strcmp(textoUser, senha)==0){
+        printf("[senha correta]\n");
+        break;
+    
+    }
+    if(i == 3) printf("[numero de tentativas esgotadas]\n");
+    else 
+    printf("[senha incorreta, tente novamente]\n");
+    }
+    return 0;
+}
