@@ -214,3 +214,20 @@ int main(){
     free(database);
     return 0;
 }
+
+
+//3 4 7 12 19 28 39 52 67 84
+#include <stdio.h>
+
+int main(){
+   int quantDatabase = 10;
+   int pNum = 3;
+   int diferenca = 1;
+   
+   for(int i = 0; i < quantDatabase; i++){
+       printf("%d ", pNum);
+       pNum += diferenca;
+       diferenca +=2;
+   }
+   return 0; 
+}
