@@ -170,3 +170,47 @@ int main(){
     }
     return 0;
 }
+
+//7.Escreva uma função que recebe um array de double e o tamanho dele por parâmetro
+//e retorna a posição onde se encontra o maior valor do array. Se houver mais de um valor maior,
+//devolver a posição da primeira ocorrência.
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    int tam;
+    
+    printf("digite um tamanho para o array: ");
+    scanf("%d", &tam);
+    
+    double *database = malloc(tam * sizeof(double));
+    if (database == NULL){
+        printf("erro ao alocar a data!\n");
+        return 1;
+    }
+    
+    for (int i = 0; i < tam ; i++){
+        printf("digite o numero double: \n");
+        scanf("%lf", &database[i]);
+    }
+    
+    int maxIndex = 0;
+    double max = database[0];
+    for (int i=1; i<tam; i++){
+        if (database[i] > max){
+            max = database[i];
+            maxIndex = i;
+        }
+    }
+    
+    printf("os dados armazenados são:\n ");
+    for (int i = 0; i < tam ; i++){
+       printf("%.2lf\n", database[i]);
+    }
+    
+    printf("o maior double é %.2lf na posição %d\n", max, maxIndex);
+    
+    free(database);
+    return 0;
+}
