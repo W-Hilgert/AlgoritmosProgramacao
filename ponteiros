@@ -1,0 +1,25 @@
+//6. Construa  um programa que leia uma palavra do teclado, 
+//mostre na tela o endereço da string onde ela foi armazenada e após,
+//mostre na tela a terceira e a quarta letra dessa palavra. 
+//Use um ponteiro para armazenar os endereços dessas letras.
+
+#include <stdio.h>
+#include <string.h>
+
+int main (){
+    char word[50];
+    printf("digite uma palavra: ");
+    fgets(word, 49, stdin);
+    
+    char *p = word;
+    printf("endereço da string: %p\n", p);
+    printf("terceira letra: %c\n", *(word+2));
+    printf("quarta letra: %c\n", *(word+3));
+    
+    char *pw = (word+2);
+    char *po = (word+3);
+    printf("o endereço da terceira letra é: %p\n", pw);
+    printf("o endereço da quarta letra é: %p\n", po);
+    
+    return 0;
+}
