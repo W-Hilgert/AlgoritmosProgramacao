@@ -1,0 +1,45 @@
+//6: Faça um programa que cria dois arrays bidimensionais de double de dimensões informadas pelo usuário pelo teclado.
+// Em seguida, preencha as posições dos arrays também com valores obtidos via teclado. 
+// Depois disso, seu programa deve criar um array unidimensional que possui todos os elementos negativos (dos dois arrays)
+//  na primeira parte e todos os elementos positivos e zero (dos dois arrays) na segunda parte.
+#include <stdio.h>
+
+int main(){
+    int numI;
+    int numJ;
+
+    int num2I;
+    int num2J;
+
+    printf("qual o tam da coluna do array 1: ");
+    scanf("%d", &numJ);
+    printf("qual o tam da linha do array 1: ");
+    scanf("%d", &numI);
+    printf("qual o tam da coluna do array 2: ");
+    scanf("%d", &num2J);
+    printf("qual o tam da linha do array 2: ");
+    scanf("%d", &num2I);
+
+    int numbers1[numI][numJ];
+    int numbers2[num2I][num2J];
+    int x = (numI*num2I)+(num2I*num2J);
+
+    for (int i=0; i<numI; i++){
+        for(int j=0; j<numJ; j++){
+        printf("digite um valor para numbers1[%d][%d] ", numbers1[i][j]);
+        scanf("%lf", &numbers1[i][j]);
+        }
+    }
+    
+    for(int aI=0; aI<num2I; aI++){
+        for(int bJ; bJ<num2J; bJ++){
+            printf("digite um valor para numbers2[%d][%d] ", numbers2[aI][bJ]);
+            scanf("%lf", &numbers2[aI][bJ]);
+            }
+        }
+
+    int array[x] = numbers1[i][j] * numbers2[aI][bJ]; 
+    printf("%d", array[x]);
+
+    return 0;
+}
