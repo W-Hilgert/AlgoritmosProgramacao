@@ -43,3 +43,102 @@ int main(){
 
     return 0;
 }
+
+//6 da listaMatrizBi
+#include <stdio.h>
+#include <stdlib.h>
+
+int main() {
+    int rows1, cols1, rows2, cols2;
+    printf("Informe o número de linhas e colunas do primeiro array: ");
+    scanf("%d %d", &rows1, &cols1);
+    printf("Informe o número de linhas e colunas do segundo array: ");
+    scanf("%d %d", &rows2, &cols2);
+
+    // Alocar memória para os arrays bidimensionais
+    double **array1 = (double **)malloc(rows1 * sizeof(double *));
+    double **array2 = (double **)malloc(rows2 * sizeof(double *));
+    for(int i = 0; i < rows1; i++) {
+        array1[i] = (double *)malloc(cols1 * sizeof(double));
+    }
+    for(int i = 0; i < rows2; i++) {
+        array2[i] = (double *)malloc(cols2 * sizeof(double));
+    }
+
+    // Preencher os arrays com valores fornecidos pelo usuário
+    printf("Informe os valores para o primeiro array:\n");
+    for(int i = 0; i < rows1; i++) {
+        for(int j = 0; j < cols1; j++) {
+            scanf("%lf", &array1[i][j]);
+        }
+    }
+    printf("Informe os valores para o segundo array:\n");
+    for(int i = 0; i < rows2; i++) {
+        for(int j = 0; j < cols2; j++) {
+            scanf("%lf", &array2[i][j]);
+        }
+    }
+
+    // Contar elementos negativos e não-negativos
+    int count_negative = 0, count_non_negative = 0;
+    for(int i = 0; i < rows1; i++) {
+        for(int j = 0; j < cols1; j++) {
+            if(array1[i][j] < 0) {
+                count_negative++;
+            } else {
+                count_non_negative++;
+            }
+        }
+    }
+    for(int i = 0; i < rows2; i++) {
+        for(int j = 0; j < cols2; j++) {
+            if(array2[i][j] < 0) {
+                count_negative++;
+            } else {
+                count_non_negative++;
+            }
+        }
+    }
+
+    // Criar array unidimensional
+    double *result = (double *)malloc((count_negative + count_non_negative) * sizeof(double));
+    int index_negative = 0, index_non_negative = count_negative;
+    for(int i = 0; i < rows1; i++) {
+        for(int j = 0; j < cols1; j++) {
+            if(array1[i][j] < 0) {
+                result[index_negative++] = array1[i][j];
+            } else {
+                result[index_non_negative++] = array1[i][j];
+            }
+        }
+    }
+    for(int i = 0; i < rows2; i++) {
+        for(int j = 0; j < cols2; j++) {
+            if(array2[i][j] < 0) {
+                result[index_negative++] = array2[i][j];
+            } else {
+                result[index_non_negative++] = array2[i][j];
+            }
+        }
+    }
+
+    // Exibir o array resultante
+    printf("Array resultante:\n");
+    for(int i = 0; i < count_negative + count_non_negative; i++) {
+        printf("%lf ", result[i]);
+    }
+    printf("\n");
+
+    // Liberar memória alocada
+    for(int i = 0; i < rows1; i++) {
+        free(array1[i]);
+    }
+    free(array1);
+    for(int i = 0; i < rows2; i++) {
+        free(array2[i]);
+    }
+    free(array2);
+    free(result);
+
+    return 0;
+}
