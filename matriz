@@ -204,3 +204,43 @@ int main() {
 
     return 0;
 }
+
+//dizer em qual posição esta o caracter
+#include <stdio.h>
+#include <stdbool.h>
+
+#define ROWS 3
+#define COLS 3
+
+int main() {
+    char array[ROWS][COLS] = {
+        {'a', 'b', 'c'},
+        {'d', 'e', 'f'},
+        {'g', 'h', 'i'}
+    };
+    
+    char inputChar;
+    bool found = false;
+    
+    printf("Digite um caractere: ");
+    scanf(" %c", &inputChar);
+    
+    for (int i = 0; i < ROWS; i++) {
+        for (int j = 0; j < COLS; j++) {
+            if (array[i][j] == inputChar) {
+                printf("Caractere encontrado na posição [%d][%d] do array\n", i, j);
+                found = true;
+                break;
+            }
+        }
+        if (found) {
+            break;
+        }
+    }
+    
+    if (!found) {
+        printf("Caractere não encontrado no array\n");
+    }
+
+    return 0;
+}
